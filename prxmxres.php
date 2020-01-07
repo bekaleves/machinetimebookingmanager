@@ -2,17 +2,10 @@
 session_start();
 require("connection.php");
 
-/*
- * $username = $_SESSION['username'];
- * $password = $_SESSION['password'];
- * $host = $_SESSION['hostip'];
- * $port = $_SESSION['port'];
- */
-
 // credentials for dev
-$username = "root@pam";
-$password = "bwhzsvqepegsbtxj";
-$host = "10.108.99.19";
+$username = "";
+$password = "";
+$host = "";
 $port = 8006;
 
 $ticket = 'curl -s -k -d "username=' . $username . '&password=' . $password . '" https://' . $host . ':' . $port . '/api2/json/access/ticket';
