@@ -1,5 +1,6 @@
 <?php 
 session_start();
+//comment
 require("connection.php");
 $vxhostip =  $_SESSION['vxhostip'];
 $vboxes = 'curl http://'.$vxhostip.':8269/vboxmanage/list/vms | jq ".list"';
