@@ -4,7 +4,7 @@
 <style type="text/css">
 body {
 	text-align: center;
-	font-family: Arial;
+	font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 }
 </style>
 <title>Login failed!</title>
