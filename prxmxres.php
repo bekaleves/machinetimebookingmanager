@@ -87,8 +87,8 @@ img {
 						<?php 
 							$resources_decoded = json_decode($resources_json, true);
 							for ($num = 0; $num < sizeof($resources_decoded); $num++) {
-								if (isset($resources_decoded[$num]['name']) AND isset(($resources_decoded[$num]['type']))) {
-									if ($resources_decoded[$num]['type'] == "lxc") {
+								if (isset($resources_decoded[$num]['name']) && isset(($resources_decoded[$num]['type'])) && ($resources_decoded[$num]['type'] == "lxc")) {
+									//if ($resources_decoded[$num]['type'] == "lxc") {
 										echo '<a href="https://' . $host . ':' . $port . '/?console=' . $resources_decoded[$num]['type'] . '&novnc=1&vmid=' . $resources_decoded[$num]['vmid'] . '&vmname=' . $resources_decoded[$num]['name'] . '&node=' . $nodename . '"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Linux_Containers_logo.png" title="' . $resources_decoded[$num]['name'] . '" /></a> ' . $resources_decoded[$num]['name'] . '</br>';	
 										$sql = "INSERT INTO resources (id, name)
 													SELECT * 
@@ -102,7 +102,7 @@ img {
 																	  AND name = '{$resources_decoded[$num]['name']}') 
 																	  LIMIT 1;";
 										mysqli_query($conn, $sql);
-									}
+								//	}
 								}
 							}
 							echo '</br>';
